@@ -19,16 +19,9 @@ public class AppSelector {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return apps;
     }
 
-    public static void main(String[] args) {
-        List<String> runningApps = getRunningApps();
-        System.out.println("Running Applications:");
-        for (String app : runningApps) {
-            System.out.println("- " + app);
-        }
-    }
 }

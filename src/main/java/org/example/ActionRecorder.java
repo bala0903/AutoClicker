@@ -31,7 +31,7 @@ public class ActionRecorder implements NativeMouseListener, NativeKeyListener, N
     private static final List<Action> recordedActions = new ArrayList<>();
     private static boolean isRecording = true;
 
-    public static void ActionRecorder(String[] args) {
+    public static void ActionRecorderMethod() {
         try {
             // Register global mouse and keyboard listeners
             GlobalScreen.registerNativeHook();
@@ -41,7 +41,7 @@ public class ActionRecorder implements NativeMouseListener, NativeKeyListener, N
 
             System.out.println("Recording started... Press 'ESC' to stop.");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -102,7 +102,7 @@ public class ActionRecorder implements NativeMouseListener, NativeKeyListener, N
             }
             System.out.println("Actions saved to file!");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

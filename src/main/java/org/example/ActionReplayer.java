@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActionReplayer {
-    public static void ActionReplayer(String[] args) throws AWTException, IOException, InterruptedException {
+    public static void ActionReplayerMethod() throws AWTException, IOException, InterruptedException {
         Robot robot = new Robot();
         List<Action> recordedActions = new ArrayList<>();
         int loopcount = AppSelectorUI.loopCount;
@@ -30,7 +30,7 @@ public class ActionReplayer {
         int sleeptime = AppSelectorUI.startAfterSecond;
 
         System.out.println("Waiting for Application for start " + sleeptime + " seconds");
-        Thread.sleep(sleeptime * 1000);
+        Thread.sleep(sleeptime * 1000L);
         while (counter <= loopcount) {
             for (Action action : recordedActions) {
                 if (action.type.equals("mouse_click")) {

@@ -97,10 +97,10 @@ public class AppSelectorUI {
             bringToFront(selectedApp);
 
             if ("Record".equals(selectedAction)) {
-                ActionRecorder.ActionRecorder(null);
+                ActionRecorder.ActionRecorderMethod();
             } else {
                 try {
-                    ActionReplayer.ActionReplayer(null);
+                    ActionReplayer.ActionReplayerMethod();
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -132,7 +132,7 @@ public class AppSelectorUI {
             Runtime.getRuntime().exec("powershell \"(Get-Process " + appName + ").MainWindowHandle | foreach { [System.Windows.Forms.SendKeys]::SendWait('% {TAB}') }\"");
             System.out.println("Focused on " + appName);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
         }
     }
 
